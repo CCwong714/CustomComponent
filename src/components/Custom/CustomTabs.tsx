@@ -65,7 +65,7 @@ const Tabs = <T,>({
   );
 };
 
-export default Tabs;
+export { Tabs };
 
 // Example :
 

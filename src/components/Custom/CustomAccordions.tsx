@@ -39,7 +39,7 @@ const CustomAccordions: React.FC<CustomAccordionsProps> = ({
   );
 };
 
-export default CustomAccordions;
+export { CustomAccordions };
 
 // Example
 /* 

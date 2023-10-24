@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { cn } from '../../utils/cnStyles';
 
 interface CustomSpinnerProps {
@@ -19,7 +18,8 @@ const CustomSpinner: React.FC<CustomSpinnerProps> = ({ width, height }) => {
   );
 };
 
-export default CustomSpinner;
+export { CustomSpinner };
+
 CustomSpinner.defaultProps = {
   width: 'w-10',
   height: 'h-10',
