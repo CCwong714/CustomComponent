@@ -16,3 +16,6 @@ const CustomFormInput = <T extends FieldValues>({
 };
 
 export { CustomFormInput };
+
+// Example 
+// <CustomFormInput register={register} name='userName' />

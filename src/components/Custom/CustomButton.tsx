@@ -1,4 +1,4 @@
-import { cn } from 'src/utils/cnStyle';
+import { cn } from '../../utils/cnStyles';
 
 interface CustomButtonProps {
   width?: string;
