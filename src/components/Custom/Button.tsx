@@ -1,6 +1,6 @@
 import { cn } from '../../utils/cnStyles';
 
-interface CustomButtonProps {
+interface ButtonProps {
   width?: string;
   height?: string;
   className?: string;
@@ -8,7 +8,7 @@ interface CustomButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   width,
   height,
   className,
@@ -26,9 +26,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   );
 };
 
-export { CustomButton };
+export { Button };
 
-CustomButton.defaultProps = {
+Button.defaultProps = {
   height: '30px',
   width: 'w-full',
   className: 'bg-blue-300 hover:bg-blue-600 active:bg-blue-800',

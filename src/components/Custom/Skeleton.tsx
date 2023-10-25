@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CustomSkeleton: React.FC = () => {
+const Skeleton: React.FC = () => {
   return (
     <div
       className='h-7 w-full animate-pulse rounded-2xl bg-gray-200'
@@ -9,4 +9,4 @@ const CustomSkeleton: React.FC = () => {
   );
 };
 
-export { CustomSkeleton };
+export { Skeleton };

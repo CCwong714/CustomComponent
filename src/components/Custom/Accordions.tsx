@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface CustomAccordionsProps {
+interface AccordionsProps {
   title: string;
   className: string;
   children: React.ReactNode;
 }
-const CustomAccordions: React.FC<CustomAccordionsProps> = ({
+const Accordions: React.FC<AccordionsProps> = ({
   title,
   className,
   children,
@@ -39,11 +39,11 @@ const CustomAccordions: React.FC<CustomAccordionsProps> = ({
   );
 };
 
-export { CustomAccordions };
+export { Accordions };
 
 // Example
 /* 
-<CustomAccordions title='sleep' className='text-white'>
+<Accordions title='sleep' className='text-white'>
 	<p>123</p>
-</CustomAccordions> 
+</Accordions> 
 */

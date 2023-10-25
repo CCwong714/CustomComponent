@@ -7,7 +7,7 @@ interface FormInputProps<T extends FieldValues>
   name: Path<T>;
 }
 
-const CustomFormInput = <T extends FieldValues>({
+const FormInput = <T extends FieldValues>({
   register,
   name,
   ...props
@@ -15,7 +15,7 @@ const CustomFormInput = <T extends FieldValues>({
   return <input {...register(name)} {...props} />;
 };
 
-export { CustomFormInput };
+export { FormInput };
 
 // Example 
-// <CustomFormInput register={register} name='userName' />
+// <FormInput register={register} name='userName' />

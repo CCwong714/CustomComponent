@@ -1,14 +1,14 @@
-interface CustomImgProps extends React.ComponentProps<'button'> {
+interface ImgProps extends React.ComponentProps<'button'> {
   src: string;
   alt: string;
   imgProps?: React.HTMLProps<HTMLImageElement>;
 }
 
-interface CustomProps extends CustomImgProps {
+interface Props extends ImgProps {
   path: string;
 }
 
-const CustomSvg = ({ src, alt, path, imgProps, ...props }: CustomProps) => {
+const Svg = ({ src, alt, path, imgProps, ...props }: Props) => {
   return (
     <button type='button' {...props}>
       <img src={`/images${path}/${src}.svg`} alt={alt} {...imgProps} />
@@ -16,7 +16,7 @@ const CustomSvg = ({ src, alt, path, imgProps, ...props }: CustomProps) => {
   );
 };
 
-const CustomPng = ({ src, alt, path, imgProps, ...props }: CustomProps) => {
+const Png = ({ src, alt, path, imgProps, ...props }: Props) => {
   return (
     <button type='button' {...props}>
       <img src={`/images${path}/${src}.png`} alt={alt} {...imgProps} />
@@ -24,7 +24,7 @@ const CustomPng = ({ src, alt, path, imgProps, ...props }: CustomProps) => {
   );
 };
 
-const CustomImg = ({ src, alt, imgProps, ...props }: CustomImgProps) => {
+const Img = ({ src, alt, imgProps, ...props }: ImgProps) => {
   return (
     <button type='button' {...props}>
       <img src={src} alt={alt} {...imgProps} />
@@ -32,12 +32,12 @@ const CustomImg = ({ src, alt, imgProps, ...props }: CustomImgProps) => {
   );
 };
 
-export { CustomImg, CustomPng, CustomSvg };
+export { Img, Png, Svg };
 
 // Example :
 
 /* 
-<CustomImg
+<Img
   src=''
 - alt=''
   onClick={() => {

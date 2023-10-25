@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const CustomDrawer = () => {
+const Drawer = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -42,4 +42,4 @@ const CustomDrawer = () => {
   );
 };
 
-export { CustomDrawer };
+export { Drawer };

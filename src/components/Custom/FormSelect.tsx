@@ -5,7 +5,8 @@ type OptionType = {
   [key: string]: string | number; // Adjust the type as per your options' structure
 };
 
-interface InputProps<T extends FieldValues> extends React.ComponentProps<'select'> {
+interface SelectProps<T extends FieldValues>
+  extends React.ComponentProps<'select'> {
   register: UseFormRegister<T>;
   name: Path<T>;
   options: OptionType[];
@@ -19,7 +20,7 @@ const defaultProps = {
 };
 
 //! 如果添加onChange {...register("")} 将会失效
-const CustomFormSelect = <T extends FieldValues>({
+const FormSelect = <T extends FieldValues>({
   register,
   name,
   options,
@@ -28,7 +29,7 @@ const CustomFormSelect = <T extends FieldValues>({
   valueKey,
   optionProps,
   ...props
-}: InputProps<T>) => {
+}: SelectProps<T>) => {
   return (
     <select {...register(name)} {...props}>
       {options.map((items) => (
@@ -40,13 +41,13 @@ const CustomFormSelect = <T extends FieldValues>({
   );
 };
 
-export { CustomFormSelect };
+export { FormSelect };
 
-CustomFormSelect.defaultProps = defaultProps;
+FormSelect.defaultProps = defaultProps;
 
 // Example 1 :
 
-// <CustomFormSelect
+// <FormSelect
 // 	register={register}
 // 	name='username'
 // 	options={[{ id: 1, value: 'a', label: 'abc' }]}
