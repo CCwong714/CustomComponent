@@ -1,31 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios, {
-  AxiosInstance,
-  AxiosRequestConfig,
-  InternalAxiosRequestConfig,
-} from 'axios';
-import { STORAGE_KEYS } from '../constants/sessionKeys';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 const serverAxiosParams = {
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: 'https://pokeapi.co/api/v2/pokemon/ditto',
 };
 
 export const serverAxiosInstance = axios.create(serverAxiosParams);
-
-serverAxiosInstance.interceptors.request.use(
-  (config: InternalAxiosRequestConfig<any>) => {
-    const accessToken = sessionStorage.getItem(STORAGE_KEYS.accessToken);
-    if (accessToken) {
-      // eslint-disable-next-line no-param-reassign
-      config.headers.Authorization = `Bearer ${accessToken}`;
-    }
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
 
 const api = (axiosInstance: AxiosInstance) => {
   return {

@@ -1,8 +1,27 @@
 // Interface
 // Interface 必须是 {} 的模式
 // 有些人喜欢在 Interface naming 会使用 I 开头
+// Interface是允许一样的naming的 他会自动帮你把一样的naming merge 在一起
 
 // Example:
+// same naming
+// Interface是允许一样的naming的 他会自动帮你把一样的naming combine 在一起
+// Interface well be combine the same naming interface by default
+interface IUserDetils {
+  name: string;
+  age: number;
+}
+interface IUserDetils {
+  address: string;
+  height: number;
+}
+
+export const userDetails: IUserDetils = {
+  name: 'John',
+  age: 18,
+  address: 'KL Tower',
+  height: 180,
+};
 
 // function type
 export interface IScheduleVideo {

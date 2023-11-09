@@ -4,6 +4,7 @@ export namespace MyNameSpace {
   export const handleSumbit = () => {
     console.log('submit MyNameSpace');
   };
+  export const DemoValue: number = 123;
 }
 
 export namespace NewNameSpace {
@@ -11,3 +12,4 @@ export namespace NewNameSpace {
     console.log('submit NewNameSpace');
   };
 }
+

@@ -2,6 +2,28 @@
 // 有些人喜欢在 type naming 会使用 T 开头
 
 // Example
+// same nameing
+// type 和Interface 不一样在于他不会自动把两个一样名字的 combine起来
+// 这种情况他将会优先选择第一个为你的type
+// type is not allowed same name 
+// Type is different from Interface. It does not combine 
+// two names with the same name.
+// In this case Typescript will give priority to the first one as your type
+type TUserDetils = {
+  name: string;
+  age: number;
+};
+type TUserDetils = {
+  address: string;
+  height: number;
+};
+export const userDetails: TUserDetils = {
+  name: 'John',
+  age: 18,
+  address: 'KL Tower',
+  height: 180,
+};
+
 // function type
 export type TScheduleVideo = (schedulerFor: Date) => Promise<boolean>;
 
