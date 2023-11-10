@@ -1,6 +1,5 @@
 import { Signal, effect, signal } from '@preact/signals-react';
-import React from 'react';
-import Typescript from './components/Typescript/Typescript';
+import React, { useState } from 'react';
 
 const testing: Signal<null | Array<number | string | boolean | number[]>> =
   signal(null);
@@ -10,12 +9,10 @@ testing.value = [1, 2, '3', 4, false, 5, 6, 7, [1, 2, 3]];
 effect(() => {});
 
 const App: React.FC = () => {
-  // const handleSumbit = MyNameSpace.handleSumbit;
-
   return (
     <div className='mx-8 flex flex-col gap-2 items-center justify-center w-[100vw] h-[100vh]'>
       main page
-      <Typescript />
+      {/* <Typescript /> */}
     </div>
   );
 };

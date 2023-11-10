@@ -8,7 +8,13 @@ interface ITodo {
   completed: boolean;
 }
 
-type TTodoPreview = Pick<ITodo, 'title' | 'completed'>;
+interface ITodo2 {
+  title: string;
+  completed: boolean;
+  placeholder: string;
+}
+
+type TTodoPreview = Pick<ITodo, keyof ITodo & keyof ITodo2>;
 
 export const todo: TTodoPreview = {
   title: 'Clean room',

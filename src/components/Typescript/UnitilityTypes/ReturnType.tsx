@@ -39,8 +39,8 @@ export type T5 = ReturnType<any>;
 export type T6 = ReturnType<never>;
 // type T6 = never
 
-export type T7 = ReturnType<string>;
+// export type T7 = ReturnType<string>;
 // ^ Type 'string' does not satisfy the constraint '(...args: any) => any'.
 
-export type T8 = ReturnType<Function>;
+// export type T8 = ReturnType<Function>;
 // ^ Type 'Function' does not satisfy the constraint '(...args: any) => any'.

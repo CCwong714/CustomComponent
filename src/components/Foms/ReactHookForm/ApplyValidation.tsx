@@ -1,6 +1,5 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { style } from './ReactHookForm';
-import { FormInput } from '../../Custom';
 
 interface IFormInput {
   firstName: string;
@@ -44,7 +43,7 @@ export default function ApplyValidation() {
         })}
         className={style}
       />
-   
+
       <input type='submit' />
     </form>
   );
