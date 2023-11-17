@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { TRANSLATIONS } from 'src/constants/translations';
 import { useBearStore } from 'src/store/useBearStore';
+import { TRANSLATIONS } from './translations';
 
 const useTranslation = (localeCode: string) => {
   const data: Record<string, Record<string, string>> = TRANSLATIONS;

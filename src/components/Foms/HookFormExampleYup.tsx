@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { Button } from '../Custom';
+import { Accordions, Button } from '../Custom';
 import Toast from '../Custom/Toast';
 
 type TFormData = {
@@ -298,6 +298,10 @@ const HookFormExampleYup: React.FC = () => {
           </div>
         </>
       )}
+
+      <Accordions title='124' className=''>
+        <p>1234514352</p>
+      </Accordions>
     </div>
   );
 };

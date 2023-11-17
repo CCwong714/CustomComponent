@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { cn } from '../../utils/cnStyles';
 
 interface AccordionsProps {
   title: string;
@@ -15,7 +16,7 @@ const Accordions: React.FC<AccordionsProps> = ({
       <details className='group'>
         <summary className='flex cursor-pointer list-none items-center justify-between font-medium border-solid border-2 p-2 rounded-lg group-open:rounded-b-none'>
           <span className={className}>{title}</span>
-          <span className='transition group-open:rotate-180'>
+          <span className='transition-transform group-open:rotate-180'>
             <svg
               fill='none'
               height='24'
@@ -31,7 +32,8 @@ const Accordions: React.FC<AccordionsProps> = ({
             </svg>
           </span>
         </summary>
-        <div className='group-open:animate-fadeIn pt-3 p-2 border-solid border-2 border-t-0 group-open:rounded-b-xl'>
+
+        <div className='duration-300 ease-in-out overflow-hidden pt-3 border-solid border-2 border-t-0 rounded-b-lg p-2 max-h-0 group-open:max-h-96 '>
           {children}
         </div>
       </details>
