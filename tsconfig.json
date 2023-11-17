@@ -14,8 +14,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedImports": true // 添加这一行
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "exclude": [],
