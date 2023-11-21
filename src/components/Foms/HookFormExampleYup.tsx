@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { Accordions, Button } from '../Custom';
+import { Button } from '../Custom';
 import Toast from '../Custom/Toast';
 
 type TFormData = {
@@ -64,20 +64,23 @@ const HookFormExampleYup: React.FC = () => {
           : yup.number().nonNullable(),
     })
     .required();
+    
   // form
   const {
     reset,
     control,
     register,
     handleSubmit,
-    clearErrors,
+    // clearErrors,
+    getFieldState,
 
     // setValue,
     // getFieldState, //用于拿到value的 error,invalid,isDirty,isTouched Example: getFieldState('username')
     // watch, // 用于查看form的value, Example : watch("username")
     // trigger, // 用于检查是不是已经完成自己的validation Example ：const isValid = await trigger('username');
     setError,
-    formState: { errors },
+
+    formState: { errors, touchedFields, dirtyFields },
   } = useForm<TFormData>({
     resolver: yupResolver<TFormData>(schema),
   });
@@ -138,6 +141,7 @@ const HookFormExampleYup: React.FC = () => {
 
   // const onSubmit: SubmitHandler<TFormData> = (data) => console.log(data);
 
+  console.log(getFieldState('password').isTouched);
   return (
     <div className='flex h-[100vh] w-[100vw] flex-col items-center justify-center'>
       {showToast && (
@@ -281,12 +285,11 @@ const HookFormExampleYup: React.FC = () => {
           </Button>
 
           {/* change form (login / register) */}
-
           <div className='flex w-full max-w-[400px] items-end justify-end pt-2'>
             <Button
               className='w-fit text-end underline'
               onClick={() => {
-                // reset();
+                reset();
                 if (step === ENaming.Login) {
                   return setStep(ENaming.Register);
                 }
@@ -296,12 +299,11 @@ const HookFormExampleYup: React.FC = () => {
               {step === ENaming.Login ? ENaming.Register : ENaming.Login}
             </Button>
           </div>
+
+          <p>isDirty : {dirtyFields['username'] ? 'true' : 'false'}</p>
+          <p>isTouched : {touchedFields['username'] ? 'true' : 'false'}</p>
         </>
       )}
-
-      <Accordions title='124' className=''>
-        <p>1234514352</p>
-      </Accordions>
     </div>
   );
 };
