@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { cn } from '../../utils/cnStyles';
+import React from 'react';
 
 interface AccordionsProps {
   title: string;

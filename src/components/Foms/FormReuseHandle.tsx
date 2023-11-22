@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 const FormReuseHandle: React.FC = () => {
   const [state, setState] = useState({ username: '', password: '' });
+  
   const handleInputChange = (event: {
     target: { name: string; value: string | number };
   }) => {

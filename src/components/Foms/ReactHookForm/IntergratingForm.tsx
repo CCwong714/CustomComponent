@@ -25,7 +25,6 @@ const Select = React.forwardRef<
   HTMLSelectElement,
   { label: string } & ReturnType<UseFormRegister<IFormValues>>
 >(({ onChange, onBlur, name, label }, ref) => {
-  console.log(ref);
   return (
     <>
       <label>{label}</label>

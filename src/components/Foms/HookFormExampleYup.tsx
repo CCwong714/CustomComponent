@@ -64,16 +64,16 @@ const HookFormExampleYup: React.FC = () => {
           : yup.number().nonNullable(),
     })
     .required();
-    
+
   // form
   const {
     reset,
     control,
     register,
     handleSubmit,
-    // clearErrors,
-    getFieldState,
-
+    // clearErrors,=
+    getValues,
+    setValue,
     // setValue,
     // getFieldState, //用于拿到value的 error,invalid,isDirty,isTouched Example: getFieldState('username')
     // watch, // 用于查看form的value, Example : watch("username")
@@ -141,7 +141,6 @@ const HookFormExampleYup: React.FC = () => {
 
   // const onSubmit: SubmitHandler<TFormData> = (data) => console.log(data);
 
-  console.log(getFieldState('password').isTouched);
   return (
     <div className='flex h-[100vh] w-[100vw] flex-col items-center justify-center'>
       {showToast && (
@@ -168,7 +167,14 @@ const HookFormExampleYup: React.FC = () => {
               User name<span className='text-red-500'> *</span>
             </p>
 
-            <input {...register('username')} />
+            <input
+              {...register('username', {
+                onChange: () => {
+                  // console.log(getValues('username'));
+                },
+              })}
+            />
+            {/* {console.log(watch('username'))} */}
 
             <span className='min-h-[25px] text-end text-[12px] font-light text-red-500'>
               {errors.username && errors.username?.message}

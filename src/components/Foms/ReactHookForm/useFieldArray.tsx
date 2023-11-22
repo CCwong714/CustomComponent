@@ -37,7 +37,7 @@ const ArrayFieldExample: React.FC = () => {
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove, prepend } = useFieldArray({
     control,
     name: 'employees',
   });
@@ -77,6 +77,7 @@ const ArrayFieldExample: React.FC = () => {
                   type='checkbox'
                   id='toggle'
                   {...register(`employees.${index}.active`)}
+                 
                   className='w-auto items-start'
                 />
                 <p>
@@ -97,11 +98,18 @@ const ArrayFieldExample: React.FC = () => {
           type='button'
           className='text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-300 rounded-md w-fit p-2 mt-2'
           onClick={() => {
+            // .push
             append({
               name: '',
-              active: true,
+              active: false,
               key: Math.floor(Math.random() * 10000000000),
             });
+            // .unshift
+            // prepend({
+            //   name: '',
+            //   active: false,
+            //   key: Math.floor(Math.random() * 10000000000),
+            // });
           }}
         >
           Add Item

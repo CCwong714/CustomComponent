@@ -12,4 +12,3 @@ export namespace NewNameSpace {
     console.log('submit NewNameSpace');
   };
 }
-
