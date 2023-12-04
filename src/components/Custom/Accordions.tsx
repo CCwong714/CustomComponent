@@ -32,7 +32,7 @@ const Accordions: React.FC<AccordionsProps> = ({
           </span>
         </summary>
 
-        <div className='duration-300 ease-in-out overflow-hidden pt-3 border-solid border-2 border-t-0 rounded-b-lg p-2 max-h-0 group-open:max-h-96 '>
+        <div className='duration-500 ease-in-out overflow-hidden pt-3 border-solid border-2 border-t-0 rounded-b-lg p-2 max-h-0 group-open:max-h-96 '>
           {children}
         </div>
       </details>

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
-import { Button } from '../../Custom';
+import { Accordions, Button } from '../../Custom';
 
 interface IItemsData {
   name: string;
@@ -77,7 +77,6 @@ const ArrayFieldExample: React.FC = () => {
                   type='checkbox'
                   id='toggle'
                   {...register(`employees.${index}.active`)}
-                 
                   className='w-auto items-start'
                 />
                 <p>
@@ -124,6 +123,9 @@ const ArrayFieldExample: React.FC = () => {
       <code className='bg-gray-300 rounded-xl p-6 max-w-[500px] mt-5'>
         {JSON.stringify(getValues())}
       </code>
+      <Accordions title='123' className=''>
+        {/* <p>123</p> */}
+      </Accordions>
     </form>
   );
 };
